@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Odev</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    // 1) "  Çağatay Yıldız" isimli metindeki boşlukları kaldır.    (REPLACE)
+
+    var name = "  Çağatay Yıldız"
+
+    var spaceName = name.replace(/\s/g, "");
+    console.log(spaceName);
+
+    // 2) "cagatay yildiz" kelimesindeki boşlukları temizle ve tüm harfleri büyült ( REPLACE ve UPPER)
+
+    var name = "cagatay yildiz";
+
+    var spaceupperName = name.replace(/ /g, "").toUpperCase();
+    console.log(spaceupperName);
+
+    // 3) "******Çağatay Yıldız" isimli metindeki yıldızları kaldır (REPLACE)
+
+    var name = "******Çağatay Yıldız";
+
+    var starName = name.replace(/\*/g, "");
+    console.log(starName);
+
+    // 4) "Çağatay  Yıldız" metnindeki kelimeler arasında 2 boşluk var bunu bir boşluk yap (REPLACE)
+
+    var name = "Çağatay  Yıldız";
+
+    var spaceName = name.replace(/\s+/g, " ");
+    console.log(spaceName);
+
+    // 5) "**Tech Career**" isimli metindeki yıldızları kaldır (REPLACE)
+
+    var name = "**Tech Career**";
+
+    var starName = name.replace(/\*/g, "");
+    console.log(starName);
+
+    // 6) "Tech Career" isimli metnin soluna ve sağına 3 yıldız koy. "***Tech Career***" ( Normal toplama operatörü)
+
+    var name = "Tech Career";
+
+    var starName = "***" + name + "***";
+    console.log(starName);
+
+    // 7) "Tech Career Bilişim teknolojileri" metnindeki son kelimeyi büyült (SUBSTRING)
+
+    var text = "Tech Career Bilişim teknolojileri";
+
+    var words = text.split(" ");
+    var lastWord = words[words.length - 1];
+    var upperLastWord = lastWord.toUpperCase();
+    words[words.length - 1] = upperLastWord;
+    var newText = words.join(" ");
+    console.log(newText);
+
+    // 8) "Tech bilişim" kelimelerin ilk harflerini büyült (Substring ve upper) -->
+
+    var text = "Tech bilişim";
+
+    var words = text.split(" ");
+    var newText = "";
+
+    for (var i = 0; i < words.length; i++) {
+        var word = words[i];
+        var firstLetterCapitalized = word.substring(0, 1).toUpperCase();
+        var otherLetters = word.substring(1);
+        var newWord = firstLetterCapitalized + otherLetters;
+
+        newText += newWord + " ";
+    }
+
+    console.log(newText);
+
+    // JS LOOP ODEV
+
+    // 9) "Tech Career" metnini tersten yazdır
+
+    var name = "Tech Career";
+  
+    var reverseName = "";
+
+    for (var i = name.length - 1; i >= 0; i--) {
+        reverseName += name.charAt(i);
+    }
+
+    console.log(reverseName);
+
+    // 10) var numbers = [-22, 5, 11, 78, -4, -250, 35, 56, 11, 24, 77, 11] bu dizideki SADECE poizitif sayıların toplamını ekrana yaz
+
+    var numbers = [-22, 5, 11, 78, -4, -250, 35, 56, 11, 24, 77, 11];
+    var positiveSum = 0;
+
+    for (var i = 0; i < numbers.length; i++) {
+        if (numbers[i] > 0) {
+            positiveSum += numbers[i];
+        }
+    }
+
+    console.log("Bu Dizindeki Pozitif Sayıların Toplamı: " + positiveSum);
+
+    // 11) var numbers = [-22, 5, 11, 78, -4, -250, 35, 56, 11, 24, 77, 11] bu dizideki en büyük sayı hangisidir?
+    
+    var numbers = [-22, 5, 11, 78, -4, -250, 35, 56, 11, 24, 77, 11];
+    var largestNumber = numbers[0];
+
+    for (var i = 1; i < numbers.length; i++) {
+        if (numbers[i] > largestNumber) {
+            largestNumber = numbers[i];
+        }
+    }
+
+    console.log("Bu Dizindeki En Büyük Sayı: " + largestNumber);
+
+    //1-50 arası sayılar içinde 3’e veya 5’e tam bölünebilen sayıları console a yaz ve kaç adet olduğunu console yaz.
+
+    var numbers = 0;
+
+    for (var i = 1; i <= 50; i++) {
+        if (i % 3 === 0 || i % 5 === 0) {
+            console.log(i);
+            numbers++;
+        }
+    }
+
+    console.log("Toplam " + numbers + " adet sayı vardır.");
+
+
+</script>
+
+</html>
